@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@keyframes shrinkBar {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.progress-bar {
+  transform-origin: left;
+  animation: shrinkBar 2s linear forwards;
+}
+
+@layer components {
+  /*table css*/
+  .table{
+    @apply w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400
+  }
+  .table-head{
+    @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center;
+  }
+  .table-body-row{
+    @apply bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 text-center;
+  }
+  .table-cell {
+    @apply px-1 py-3;
+  }
+  .table-cell-link{
+    @apply relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg;
+  }
+  .table-cell-link-span{
+    @apply relative px-3 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent;
+  }
+  .table-footer{
+    @apply w-full flex justify-center border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800;
+  }
+  .navbar-text{
+    @apply text-xl font-bold;
+  }
+  .navbar-cell{
+    @apply pr-8 text-sm;
+  }
+  .navbar-cell-list{
+    @apply absolute left-0 top-full bg-gray-700 rounded shadow-lg z-10 flex-col hidden group-hover:flex min-w-[120px] text-sm;
+  }
+  .navbar-cell-list-link{
+    @apply px-3 py-1.5 hover:bg-gray-600;
+  }
+  .error-message-1{
+    @apply bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center max-w-lg mx-auto mt-6;
+  }
+  .login-field-label{
+    @apply block text-sm/6 font-medium text-gray-900;
+  }
+  .login-field-input{
+    @apply block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6;
+  }
+  .admin-menu-container{
+    @apply grid grid-cols-1 md:grid-cols-2 gap-35 mb-10;
+  }
+  .admin-menu-link{
+    @apply bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium py-3 rounded w-full text-center transition duration-200 ease-in-out transform hover:scale-105;
+  }
+  .table-footer-page-button{
+    @apply px-3 py-2 leading-tight border border-gray-300 dark:border-gray-600;
+  }
+  .table-footer-page-button-selected{
+    @apply bg-blue-500 text-white dark:bg-blue-600;
+  }
+  .table-footer-page-button-unselected{
+    @apply bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600;
+  }
+  .table-filter-input{
+    @apply block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  }
+  .table-filter-label{
+    @apply block mb-1 text-sm font-medium text-gray-700;
+  }
+}
+
